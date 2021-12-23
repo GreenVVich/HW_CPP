@@ -59,7 +59,7 @@ int main()
                 phi_l = phi;
             }
         } else {
-            if (phi <= phi_l ){
+            if (phi <= phi_r ){
                 xr = x;
                 yr = y;
                 phi_r = phi;
