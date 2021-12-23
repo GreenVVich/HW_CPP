@@ -54,11 +54,18 @@ int main(int argc, char** argv) {
     n = n + k;
     if (n > max) max = n ;
     if (n == 0){
-        total=0;
+        bool flag = true;
         break;
     }
   }
   file.close();
+    //Хитрость
+  if n > 1{
+  total = A[n+k][2]-1;
+  if (k == 1) total = total + 1;}
+  if flag total = 0;
+            
+  
 
   cout << total;
   return 0;
