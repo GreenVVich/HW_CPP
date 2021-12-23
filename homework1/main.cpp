@@ -7,6 +7,7 @@ using namespace std;
 
 // Функции
 float phiing(double x, double y);
+double sign(double t);
 
 // Основная часть программы
 
@@ -78,18 +79,27 @@ int main()
          << endl;
     
 
-    return 228;
+    return 0;
 }
 
 float phiing(double x, double y)
 {
     float phi;
     if (x == 0 ){
-        phi = y *M_PI_2 / abs(y); // Моё любимое
+        phi = M_PI_2 * sign(y); // Моё любимое
     } else{
         phi = atan(y/x);
         if (x < 0 ){
-            phi = phi + M_PI * y / abs(y); }      
+            phi = phi + M_PI * sign(y); }      
     }   
     return phi;
+}
+
+double sign(double t)
+{
+     double signum = 1;
+    if (t < 0){
+        signum = -1;
+    }
+    return signum;
 }
