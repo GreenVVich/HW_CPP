@@ -9,7 +9,7 @@ int main(int argc, char** argv) {
   if(argc == 2){
       // есть один агрумент
       // в argv[1] содержится строка с первым агрументом (имя файла)
-    std::cout << "1st argument: "<< argv[1] << std::endl;
+    //std::cout << "1st argument: "<< argv[1] << std::endl;
   }else{
 
   }
@@ -55,7 +55,7 @@ int main(int argc, char** argv) {
 
     n = n + k;
     if (n > max) max = n ;
-    if (n == 0){
+    if (n < 2){
         bool flag = true;
         break;
     }
