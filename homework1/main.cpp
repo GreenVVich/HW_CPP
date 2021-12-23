@@ -31,8 +31,7 @@ int main()
     double x_baza;
     double y_baza;
 
-    file >> x_baza;
-    file >> y_baza;
+    file >> x_baza >> y_baza;
     float phi_baza = phiing(x_baza,y_baza);
     float phi_l = phi_baza;
     float phi_r = phi_baza;
@@ -46,10 +45,9 @@ int main()
         if (file.eof()) {
             break;
         }
-        file >> x;
-        file >> y;
+        file >> x >> y;
         
-        phi = phiing(x,y) + phi_baza; 
+        phi = phiing(x,y) + phi_baza; // Поворот осей, чтобы 0 совпадал с OX
         
         if (phi > M_PI){
             phi = phi- 2*M_PI;
