@@ -60,7 +60,7 @@ int main()
 
                 // Мясо
 
-        if (phi > phi_baza){ // Left
+        if (phi > 0){ // Left
             if (phi >= phi_l ){
                 xl = x;
                 yl = y;
