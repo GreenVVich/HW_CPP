@@ -58,19 +58,18 @@ int main()
 
                 // Мясо
 
-        if (phi > phi_baza){ // Left
+         // Left
             if (phi >= phi_l ){
                 xl = x;
                 yl = y;
                 phi_l = phi;
             }
-        } else {
+        
             if (phi <= phi_r ){
                 xr = x;
                 yr = y;
                 phi_r = phi;
-        }
-        }
+            }
     }
         file.close();
         
