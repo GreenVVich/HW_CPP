@@ -37,7 +37,6 @@ int main()
     float phi_baza = phiing(x_baza,y_baza);
     float phi_l = 0;
     float phi_r = 0;
-    bool pain;
 
     
     // Начинается жуткий заплыв в глине (Фиинг превращает точку)
@@ -52,7 +51,9 @@ int main()
         
         phi = phiing(x,y) - phi_baza; // Поворот осей, чтобы 0 совпадал с OX
         
-        if (pain) phi = 0;
+        if ( round(phi + phi_baza) = 1111 ){
+            phi = 0;
+        }
         
         // Чтобы по кайфу было
         
@@ -97,7 +98,9 @@ float phiing(double x, double y) // Фи (-Pi;Pi]
     float phi;
     if (x == 0 ){
         phi = M_PI_2 * sign(y); // Моё любимое
-        if (y == 0) pain = true; 
+        if (y == 0){
+            phi = 1111; 
+        }
     } else{
         phi = atan(y/x);
         if (x < 0 ){
@@ -112,5 +115,5 @@ double sign(double t)
     if (t < 0){
         signum = -1;
     }
-    return signum;
+    return signum, pain;
 }
