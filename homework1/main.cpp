@@ -13,7 +13,7 @@ double sign(double t);
 
 int main()
 {
-    // Месим глину
+    // Брутфорс сильнее всех
 
     double xl = 0;
     double yl = 0;
@@ -23,8 +23,10 @@ int main()
     string file_path = "in.txt";
 
 
-    // Открываем файл и достаём первую точку (Прямая (через первую точку и начало координат) делит всю плоскость на две части, пребразуем всё это дело в полярные координаты и сравним угол)
+    // Открываем файл и достаём первую точку (Прямая (через первую точку и начало координат) делит всю плоскость на две части
+    //пребразуем всё это дело в полярные координаты и сравним угол)
     // Т.к. координаты полярные, мы можем легко повернуть их, сравнивая не с нулём, а с Фи_0(phi_baza)
+    
     ifstream file;
     file.open(file_path);
 
@@ -33,8 +35,9 @@ int main()
 
     file >> x_baza >> y_baza;
     float phi_baza = phiing(x_baza,y_baza);
-    float phi_l = phi_baza;
-    float phi_r = phi_baza;
+    float phi_l = 0;
+    float phi_r = 0;
+    bool pain;
 
     
     // Начинается жуткий заплыв в глине (Фиинг превращает точку)
@@ -49,6 +52,10 @@ int main()
         
         phi = phiing(x,y) - phi_baza; // Поворот осей, чтобы 0 совпадал с OX
         
+        if (pain) phi = 0;
+        
+        // Чтобы по кайфу было
+        
         if (phi > M_PI){
             phi = phi- 2*M_PI;
         }
@@ -56,15 +63,13 @@ int main()
             phi = phi+ 2*M_PI;
         }
 
-                // Мясо
-
          // Left
             if (phi >= phi_l ){
                 xl = x;
                 yl = y;
                 phi_l = phi;
             }
-        
+        // Right
             if (phi <= phi_r ){
                 xr = x;
                 yr = y;
@@ -92,6 +97,7 @@ float phiing(double x, double y) // Фи (-Pi;Pi]
     float phi;
     if (x == 0 ){
         phi = M_PI_2 * sign(y); // Моё любимое
+        if (y == 0) pain = true; 
     } else{
         phi = atan(y/x);
         if (x < 0 ){
