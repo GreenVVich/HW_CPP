@@ -31,6 +31,7 @@ int main(int argc, char** argv) {
   int n = 1;
   double k = 1;
   double max = 1;
+  bool flag = false;
 
   while (h > 0){ // Если мы уже столкнулись, значит, дальше того n не пролетим
       if (max == n)
