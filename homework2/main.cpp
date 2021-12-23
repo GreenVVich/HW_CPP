@@ -11,7 +11,7 @@ int main(int argc, char** argv) {
       // в argv[1] содержится строка с первым агрументом (имя файла)
     std::cout << "1st argument: "<< argv[1] << std::endl;
   }else{
-      return -1;
+
   }
   
   // Остальной код
