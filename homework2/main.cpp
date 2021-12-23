@@ -29,7 +29,7 @@ int main(int argc, char** argv) {
   A[0][0] = 0;
   A[0][2] = 0;
   int n = 1;
-  double k = 1;
+  int k = 1;
   double max = 1;
   bool flag = false;
 
