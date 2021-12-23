@@ -45,7 +45,7 @@ int main(int argc, char** argv) {
     h = A[0][1] + vy*t - (9.81*t*t)/2;
 
     //if (h > A[n][1]){}
-    if (h < A[n][1]){
+    if (h <= A[n][1]){
         total = A[n][2]-1;
         if (k == -1){
             total = total + 1;
@@ -55,7 +55,7 @@ int main(int argc, char** argv) {
 
     n = n + k;
     if (n > max) max = n ;
-    if (n < 2){
+    if (n < 1){
         bool flag = true;
         break;
     }
