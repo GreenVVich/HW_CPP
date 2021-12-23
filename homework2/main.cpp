@@ -20,11 +20,11 @@ int main(int argc, char** argv) {
   double x;
   double vx;
   double vy;
-  double total= 0;
+  double total = 0;
   float t=0;
   file >> h;
   file >> vx >> vy;
-  double A[10000][3];
+  double A[10005][3];
   A[0][1] = h;
   A[0][0] = 0;
   A[0][2] = 0;
@@ -40,7 +40,7 @@ int main(int argc, char** argv) {
     }
     t = t + abs(x - A[n][0])/vx;
     x = A[n][0];
-    h = A[0][2]+ vx*t + 9.81*t*t/2;
+    h = A[0][2]+ vx*t - 9.81*t*t/2;
 
     //if (h > A[n][1]){}
     if (h<=A[n][1]){
