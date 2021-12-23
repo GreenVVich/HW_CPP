@@ -48,7 +48,15 @@ int main()
         }
         file >> x;
         file >> y;
+        
         phi = phiing(x,y) + phi_baza; 
+        
+        if (phi > M_PI){
+            phi = phi- 2*M_PI;
+        }
+        if (phi <= -M_PI){
+            phi = phi+ 2*M_PI;
+        }
 
                 // Мясо
 
@@ -82,7 +90,7 @@ int main()
     return 0;
 }
 
-float phiing(double x, double y)
+float phiing(double x, double y) // Фи (-Pi;Pi]
 {
     float phi;
     if (x == 0 ){
@@ -92,12 +100,6 @@ float phiing(double x, double y)
         if (x < 0 ){
             phi = phi + M_PI * sign(y); }      
     }   
-    if (phi > M_PI){
-        phi = phi- 2*M_PI;
-    }
-    if (phi < -M_PI){
-        phi = phi+ 2*M_PI;
-    }
     return phi;
 }
 
