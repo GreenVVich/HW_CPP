@@ -60,10 +60,10 @@ int main(int argc, char** argv) {
   }
   file.close();
     //Хитрость
-  if n > 1{
+  if (n > 1){
   total = A[n+k][2]-1;
   if (k == 1) total = total + 1;}
-  if flag total = 0;
+  if (flag) total = 0;
             
   
 
