@@ -9,7 +9,7 @@ int main(int argc, char** argv) {
   if(argc == 2){
       // есть один агрумент
       // в argv[1] содержится строка с первым агрументом (имя файла)
-    //std::cout << "1st argument: "<< argv[1] << std::endl;
+    std::cout << "1st argument: "<< argv[1] << std::endl;
   }else{
       // аргументов нет или их больше чем мы ожидаем
   }
@@ -32,8 +32,9 @@ int main(int argc, char** argv) {
   int k = 1;
   int max = 1;
   bool flag = false;
+  bool mozhno = true;
 
-  while (h > 0){ // Если мы уже столкнулись, значит, дальше того n не пролетим
+  while (mozhno){ // Если мы уже столкнулись, значит, дальше того n не пролетим
       if (max == n)
     {
         file >> A[n][0] >> A[n][1];
@@ -41,13 +42,13 @@ int main(int argc, char** argv) {
     }
     t = t + abs(x - A[n][0])/vx;
     x = A[n][0];
-    h = A[0][1] + vy*t - 9.81*t*t/2;
+    h = A[0][1] + vy*t - (9.81*t*t)/2;
 
     //if (h > A[n][1]){}
     if (h < A[n][1]){
         total = A[n][2]-1;
         if (k == -1){
-            total = total+1;
+            total = total + 1;
             }
         k=-k;
     }
@@ -58,12 +59,11 @@ int main(int argc, char** argv) {
         bool flag = true;
         break;
     }
+    if (h<=0) mozhno = false;
   }
   file.close();
+  
     //Хитрость
-  if (n > 1){
-  total = A[n+k][2]-1;
-  if (k == 1) total = total + 1;}
   if (flag) total = 0;
             
   
