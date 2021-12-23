@@ -30,7 +30,7 @@ int main(int argc, char** argv) {
   A[0][2] = 0;
   int n = 1;
   int k = 1;
-  double max = 1;
+  int max = 1;
   bool flag = false;
 
   while (h > 0){ // Если мы уже столкнулись, значит, дальше того n не пролетим
@@ -41,7 +41,7 @@ int main(int argc, char** argv) {
     }
     t = t + abs(x - A[n][0])/vx;
     x = A[n][0];
-    h = A[0][1]+ vx*t - 9.81*t*t/2;
+    h = A[0][1] + vy*t - 9.81*t*t/2;
 
     //if (h > A[n][1]){}
     if (h<=A[n][1]){
