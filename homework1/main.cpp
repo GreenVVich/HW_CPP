@@ -47,12 +47,12 @@ int main()
         }
         file >> x >> y;
         
-        phi = phiing(x,y) + phi_baza; // Поворот осей, чтобы 0 совпадал с OX
+        phi = phiing(x,y) - phi_baza; // Поворот осей, чтобы 0 совпадал с OX
         
-        if (phi >= M_PI){
+        if (phi > M_PI){
             phi = phi- 2*M_PI;
         }
-        if (phi < -M_PI){
+        if (phi <= -M_PI){
             phi = phi+ 2*M_PI;
         }
 
