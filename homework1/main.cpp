@@ -59,13 +59,13 @@ int main()
                 // Мясо
 
          // Left
-            if (phi >= phi_l ){
+            if (phi > phi_l ){
                 xl = x;
                 yl = y;
                 phi_l = phi;
             }
         
-            if (phi <= phi_r ){
+            if (phi < phi_r ){
                 xr = x;
                 yr = y;
                 phi_r = phi;
