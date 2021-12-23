@@ -24,7 +24,7 @@ int main(int argc, char** argv) {
   float t=0;
   file >> h;
   file >> vx >> vy;
-  double A[100][3];
+  double A[10000][3];
   A[0][1] = h;
   A[0][0] = 0;
   A[0][2] = 0;
