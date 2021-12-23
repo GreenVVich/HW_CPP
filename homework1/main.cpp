@@ -51,7 +51,7 @@ int main()
         
         phi = phiing(x,y) - phi_baza; // Поворот осей, чтобы 0 совпадал с OX
         
-        if ( round(phi + phi_baza) = 1111 ){
+        if ( round(phi + phi_baza) == 1111 ){
             phi = 0;
         }
         
@@ -115,5 +115,5 @@ double sign(double t)
     if (t < 0){
         signum = -1;
     }
-    return signum, pain;
+    return signum;
 }
