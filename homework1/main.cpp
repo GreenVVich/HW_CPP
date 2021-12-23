@@ -92,6 +92,8 @@ float phiing(double x, double y)
         if (x < 0 ){
             phi = phi + M_PI * sign(y); }      
     }   
+    If (phi > M_PI) phi = phi- 2*M_PI;
+    If (phi < -M_PI) phi = phi+ 2*M_PI;
     return phi;
 }
 
