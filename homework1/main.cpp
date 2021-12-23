@@ -49,16 +49,16 @@ int main()
         
         phi = phiing(x,y) + phi_baza; // Поворот осей, чтобы 0 совпадал с OX
         
-        if (phi > M_PI){
+        if (phi >= M_PI){
             phi = phi- 2*M_PI;
         }
-        if (phi <= -M_PI){
+        if (phi < -M_PI){
             phi = phi+ 2*M_PI;
         }
 
                 // Мясо
 
-        if (phi > 0){ // Left
+        if (phi >= 0){ // Left
             if (phi >= phi_l ){
                 xl = x;
                 yl = y;
